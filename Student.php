@@ -7,12 +7,13 @@
  */
 
 /**
- * Description of Student
+ * Student Class
  *
  * @author Ivelin
  */
 class Student {
 
+    //constructor
     function __construct() {
         $this->surname = '';
         $this->first_name = '';
@@ -20,14 +21,17 @@ class Student {
         $this->grades = array();
     }
 
+    //adds an email to a student class
     function add_email($which, $address) {
         $this->emails[$which] = $address;
     }
 
+    //adds a grade to a student class
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
 
+    //calculates average of grades
     function average() {
         $total = 0;
         foreach ($this->grades as $value)
@@ -35,6 +39,7 @@ class Student {
         return $total / count($this->grades);
     }
 
+    //function to print out the student's info
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' (' . $this->average() . ")\n";
